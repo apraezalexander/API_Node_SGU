@@ -1,17 +1,14 @@
 const express = require('express');
 const conectarDB = require('./config/db');
 const authRoutes = require('./routes/authRoutes');
-const productosRoutes = require('./routes/productosRoutes'); // importar rutas del producto
+const productosRoutes = require('./routes/productosRoutes'); // Importar rutas de productos
 
 // Conectar a la base de datos
 conectarDB();
-
 // Crear una instancia de Express
 const app = express();
-
 // Middleware para analizar el cuerpo de las solicitudes
 app.use(express.json());
-
 // Usar rutas de autenticación
 app.use('/api/auth', authRoutes);
 
